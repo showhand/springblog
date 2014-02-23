@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.otulive</groupId>
+    <artifactId>springblog</artifactId>
+    <name>SpringBlog Application</name>
+    <packaging>war</packaging>
+    <version>1.0.0-BUILD-SNAPSHOT</version>
+    <properties>
+        <java-version>1.6</java-version>
+        <org.springframework-version>3.2.6.RELEASE</org.springframework-version>
+        <org.springsecurity-version>3.2.0.RELEASE</org.springsecurity-version>
+        <org.springframework.roo-version>1.2.4.RELEASE</org.springframework.roo-version>
+        <org.aspectj-version>1.7.4</org.aspectj-version>
+        <jackson.version>2.3.0</jackson.version>
+        <org.slf4j-version>1.7.5</org.slf4j-version>
+        <h2.version>1.3.174</h2.version>
+        <sitemesh.version>2.4.2</sitemesh.version>
+        <shiro.version>1.2.2</shiro.version>
+        <spring-data-jpa.version>1.4.3.RELEASE</spring-data-jpa.version>
+        <hibernate.version>4.3.0.Final</hibernate.version>
+        <hibernate.validator.version>4.3.1.Final</hibernate.validator.version>
+        <mybatis.version>3.2.3</mybatis.version>
+        <mybatis-spring.version>1.2.1</mybatis-spring.version>
+        <spring.batch.version>2.2.3.RELEASE</spring.batch.version>
+        <spring.integration.version>3.0.0.RELEASE</spring.integration.version>
+    </properties>
+    <dependencies>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework-version}</version>
+            <exclusions>
+                <!-- Exclude Commons Logging in favor of SLF4j -->
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>${spring-data-jpa.version}</version>
+        </dependency>
+        <!-- Roo dependencies -->
+        <dependency>
+            <groupId>org.springframework.roo</groupId>
+            <artifactId>org.springframework.roo.annotations</artifactId>
+            <version>${org.springframework.roo-version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-envers</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <!-- Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>15.0</version>
+        </dependency>
+
+        <!-- Joda-time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jadira.usertype</groupId>
+            <artifactId>usertype.core</artifactId>
+            <version>3.1.0.CR9</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time-jsptags</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+
+        <!-- JSR-303 validation -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>1.0.0.GA</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
+        </dependency>
+
+        <!-- MyBatis -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${mybatis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+            <version>${mybatis-spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${org.aspectj-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${org.aspectj-version}</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j-version}</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>jcl-over-slf4j</artifactId>-->
+        <!--<version>${org.slf4j-version}</version>-->
+        <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <!--<dependency>-->
+        <!--<groupId>org.slf4j</groupId>-->
+        <!--<artifactId>slf4j-log4j12</artifactId>-->
+        <!--<version>${org.slf4j-version}</version>-->
+        <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>log4j</groupId>-->
+        <!--<artifactId>log4j</artifactId>-->
+        <!--<version>1.2.17</version>-->
+        <!--<exclusions>-->
+        <!--<exclusion>-->
+        <!--<groupId>javax.mail</groupId>-->
+        <!--<artifactId>mail</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+        <!--<groupId>javax.jms</groupId>-->
+        <!--<artifactId>jms</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+        <!--<groupId>com.sun.jdmk</groupId>-->
+        <!--<artifactId>jmxtools</artifactId>-->
+        <!--</exclusion>-->
+        <!--<exclusion>-->
+        <!--<groupId>com.sun.jmx</groupId>-->
+        <!--<artifactId>jmxri</artifactId>-->
+        <!--</exclusion>-->
+        <!--</exclusions>-->
+        <!--<scope>runtime</scope>-->
+        <!--</dependency>-->
+
+        <!-- @Inject -->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+
+        <!-- Servlet -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>${sitemesh.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- H2 Database -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+        </dependency>
+
+        <!-- Commons IO -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+        <!-- Apache Tiles -->
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-core</artifactId>
+            <version>2.2.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tiles</groupId>
+            <artifactId>tiles-jsp</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <!-- MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.28</version>
+        </dependency>
+
+        <!-- c3p0 Data Connection Pooling -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+
+        <!-- Spring JS -->
+        <dependency>
+            <groupId>org.springframework.webflow</groupId>
+            <artifactId>spring-js-resources</artifactId>
+            <version>2.3.2.RELEASE</version>
+        </dependency>
+
+        <!-- Dependencies for RESTful-WS -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${org.springframework-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.castor</groupId>
+            <artifactId>castor-xml</artifactId>
+            <version>1.3.2</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.security</groupId>-->
+        <!--<artifactId>spring-security-core</artifactId>-->
+        <!--<version>${org.springsecurity-version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.security</groupId>-->
+        <!--<artifactId>spring-security-web</artifactId>-->
+        <!--<version>${org.springsecurity-version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.security</groupId>-->
+        <!--<artifactId>spring-security-config</artifactId>-->
+        <!--<version>${org.springsecurity-version}</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.security</groupId>-->
+        <!--<artifactId>spring-security-taglibs</artifactId>-->
+        <!--<version>${org.springsecurity-version}</version>-->
+        <!--</dependency>-->
+
+        <!-- SECURITY begin -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>${shiro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+            <version>2.6.6</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.8</version>
+        </dependency>
+        <!-- SECURITY end -->
+        <!-- Spring Batch -->
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-core</artifactId>
+            <version>${spring.batch.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-infrastructure</artifactId>
+            <version>${spring.batch.version}</version>
+        </dependency>
+
+        <!-- Spring integration -->
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-core</artifactId>
+            <version>${spring.integration.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.integration</groupId>
+            <artifactId>spring-integration-file</artifactId>
+            <version>${spring.integration.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-integration</artifactId>
+            <version>1.2.2.RELEASE</version>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${org.springframework-version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <!-- For testing against latest Spring snapshots -->
+        <repository>
+            <id>repository.spring.snapshot</id>
+            <name>Spring Snapshot Repository</name>
+            <url>http://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <!-- For developing against latest Spring milestones -->
+        <repository>
+            <id>repository.spring.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>http://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-roo-repository</id>
+            <name>Spring Roo Repository</name>
+            <url>http://spring-roo-repository.springsource.org/release</url>
+        </repository>
+        <repository>
+            <id>repository.spring.release</id>
+            <name>Spring GA Repository</name>
+            <url>http://repo.spring.io/release</url>
+        </repository>
+    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java-version}</source>
+                    <target>${java-version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <warName>springblog</warName>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.codehaus.mojo</groupId>-->
+            <!--<artifactId>aspectj-maven-plugin</artifactId>-->
+            <!--&lt;!&ndash; Have to use version 1.2 since version 1.3 does not appear to work with ITDs &ndash;&gt;-->
+            <!--<version>1.2</version>-->
+            <!--<dependencies>-->
+            <!--&lt;!&ndash; You must use Maven 2.0.9 or above or these are ignored (see MNG-2972) &ndash;&gt;-->
+            <!--<dependency>-->
+            <!--<groupId>org.aspectj</groupId>-->
+            <!--<artifactId>aspectjrt</artifactId>-->
+            <!--<version>${org.aspectj-version}</version>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+            <!--<groupId>org.aspectj</groupId>-->
+            <!--<artifactId>aspectjtools</artifactId>-->
+            <!--<version>${org.aspectj-version}</version>-->
+            <!--</dependency>-->
+            <!--</dependencies>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<goals>-->
+            <!--<goal>compile</goal>-->
+            <!--<goal>test-compile</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--<configuration>-->
+            <!--<outxml>true</outxml>-->
+            <!--<source>${java-version}</source>-->
+            <!--<target>${java-version}</target>-->
+            <!--</configuration>-->
+            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12</version>
+                <configuration>
+                    <junitArtifactName>junit:junit</junitArtifactName>
+                    <excludes>
+                        <exclude>**/*_Roo_*</exclude>
+                    </excludes>
+                    <argLine>
+                        -javaagent:lib/spring-instrument-3.2.6.RELEASE.jar
+                    </argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

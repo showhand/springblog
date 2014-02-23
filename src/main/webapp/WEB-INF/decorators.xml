@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+    <excludes>
+        <pattern>/ckeditor/*</pattern>
+        <pattern>/images/*</pattern>
+        <pattern>/jqgrid/*</pattern>
+        <pattern>/scripts/*</pattern>
+        <pattern>/styles/*</pattern>
+        <pattern>/api/*</pattern>
+        <pattern>/blogs/listgrid</pattern>
+        <pattern>/categories/listforsearch</pattern>
+    </excludes>
+
+    <decorator name="default" page="default.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

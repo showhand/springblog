@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.otulive.springblog.persistence.UserMapper">
+
+    <resultMap type="User" id="userResultMap">
+        <id property="id" column="id"/>
+        <result property="loginName" column="LOGIN_NAME"/>
+        <result property="name" column="NAME"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
+        <result property="roles" column="roles"/>
+        <result property="registerDate" column="REGISTER_DATE"/>
+    </resultMap>
+
+    <select id="findByUserName" parameterType="string" resultMap="userResultMap">
+        SELECT 
+            id,
+            login_name,
+            name,
+            PASSWORD,
+            salt,
+            roles,
+            REGISTER_DATE
+        FROM APP_USER U WHERE U.login_name = #{userName}
+    </select>
+
+</mapper>
